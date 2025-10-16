@@ -4,10 +4,10 @@
 
 :root {
     /* Paleta: Blue (Primary), White (Light), Black (Secondary/Dark) */
-    --bs-primary: #002D62;    /* Azul Marinho (Assinatura) */
-    --bs-secondary: #000000;  /* Preto Puro (Headers e Destaque) */
-    --bs-dark: #212529;       /* Quase Preto (Texto Principal) */
-    --bs-light: #FFFFFF;      /* Branco Puro (Fundo) */
+    --bs-primary: #0b0a0f;    /* Azul Marinho (Assinatura) */
+    --bs-secondary: #000000;  /* Preto Puro (Headers e Destaque) */
+    --bs-dark: #212529;       /* Quase Preto (Texto Principal) */
+    --bs-light: #ffffff;      /* Branco Puro (Fundo) */
     
     /* Cor para o Botão Google Reviews (Verde - Necessidade funcional) */
     --bs-success: #17A936; 
@@ -129,8 +129,10 @@ p, .lead {
 
 /* Seção HERO (Home) */
 #home {
-    /* Fundo Escuro para contraste com texto branco e forte apelo visual */
+    /* CORREÇÃO FINAL CONFIRMADA: O '../' sobe da pasta 'css' para a raiz,
+       e depois desce para a pasta 'img'. */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/residential-commercial-cleaning-nc.jpg') no-repeat center center;
+    
     background-size: cover;
     background-attachment: fixed; 
     display: flex; /* Garante que o conteúdo centralize */
