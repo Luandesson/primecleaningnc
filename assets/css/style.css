@@ -212,3 +212,20 @@ footer a:hover {
 .nav-tabs .nav-link:hover:not(.active) {
     border-color: transparent;
 }
+/* No seu style.css */
+
+/* 2. Para o link "Rate Us on Google" no rodapé */
+.footer-link {
+    /* Cor que se destaque no fundo escuro do rodapé */
+    color: #ebe7d9; /* Amarelo/Dourado, para o efeito "brilho dourado" que você gosta */
+    font-weight: 600;
+}
+/* Destaque para o Título do Formulário de Orçamento */
+#contact h2 {
+    /* Usa a cor amarela/dourada para dar a sensação de "brilho dourado" */
+    color: #2f29e8 !important; 
+    font-weight: 700; /* Negrito */
+    font-size: 2.2rem; /* Aumenta o tamanho da fonte */
+    /* Efeito de brilho (glow) sutil */
+    text-shadow: 0 0 7px rgba(94, 94, 240, 0.7); 
+}
