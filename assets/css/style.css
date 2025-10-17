@@ -4,7 +4,7 @@
 
 :root {
     /* Paleta: Blue (Primary), White (Light), Black (Secondary/Dark) */
-    --bs-primary: #0b0a0f; /* Azul Marinho (Assinatura) */
+    --bs-primary: #3707f7; /* Azul Marinho (Assinatura) */
     --bs-secondary: #000000; /* Preto Puro (Headers e Destaque) */
     --bs-dark: #212529; /* Quase Preto (Texto Principal) */
     --bs-light: #ffffff;/* Branco Puro (Fundo) */
