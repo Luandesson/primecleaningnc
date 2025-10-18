@@ -242,3 +242,101 @@ footer a:hover {
     border-radius: 8px;
     margin-bottom: 3rem !important;
 }
+
+/* Botões de Contato em Fundo Claro - Estilo Básico */
+.btn-contact-light {
+    color: var(--bs-dark) !important;
+    border-color: var(--bs-dark) !important;
+    background-color: transparent !important;
+    font-weight: 500;
+}
+.btn-contact-light:hover {
+    color: var(--bs-light) !important;
+    background-color: var(--bs-dark) !important;
+    border-color: var(--bs-dark) !important;
+}
+
+/* Corrigindo a cor do ícone do Instagram em qualquer botão que a utilize */
+.btn-contact-light .fa-instagram {
+    /* Cor oficial do Instagram (Magenta/Roxo) */
+    color: #c13584; 
+}
+/* Botões de Contato em Fundo Claro - Estilo Básico */
+.btn-contact-light {
+    color: var(--bs-dark); /* Cor do texto padrão */
+    border-color: var(--bs-dark); /* Cor da borda padrão */
+    background-color: transparent;
+    font-weight: 500;
+    /* Ajuste de padding para ser consistente com outros botões se necessário */
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0 !important; /* Mantém seu estilo quadrado */
+    border-width: 1px; /* Mantém a largura da borda */
+}
+.btn-contact-light:hover {
+    color: var(--bs-light) !important; /* Texto branco no hover */
+    background-color: var(--bs-dark) !important; /* Fundo escuro no hover */
+    border-color: var(--bs-dark) !important; /* Borda escura no hover */
+    box-shadow: none; /* Remover sombra se houver */
+}
+
+/* ESTILO ESPECÍFICO PARA O BOTÃO DO INSTAGRAM */
+.btn-instagram {
+    /* Cores do gradiente do Instagram */
+    background-image: linear-gradient(to right top, #f9ce34, #ee2a7b, #6228d7); /* Fundo do botão */
+    color: white !important; /* Cor do texto e ícone sobre o gradiente */
+    border: none; /* Sem borda para o gradiente ficar limpo */
+    font-weight: 500;
+    /* Adicione padding e border-radius se necessário, para corresponder aos outros botões */
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0 !important;
+}
+
+/* Efeito de HOVER para o botão do Instagram (opcional, pode ser um leve escurecimento) */
+.btn-instagram:hover {
+    opacity: 0.9;
+    color: white !important; /* Garante que o texto continue branco no hover */
+    box-shadow: none; /* Remover sombra se houver */
+}
+/* ESTILO ESPECÍFICO PARA O BOTÃO DO INSTAGRAM (Mantido) */
+.btn-instagram {
+    /* Cores do gradiente do Instagram */
+    background-image: linear-gradient(to right top, #f9ce34, #ee2a7b, #6228d7);
+    color: white !important;
+    border: none; 
+    font-weight: 500;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0 !important;
+}
+
+/* NOVO: ESTILO ESPECÍFICO PARA O BOTÃO CALL/TEXT (Verde iOS Phone) */
+.btn-ios-phone {
+    /* Degrade do ícone de Telefone do iOS (Verde Ciano) */
+    background-image: linear-gradient(to right, #34C759, #2ECC71);
+    color: white !important; /* Texto branco para contraste */
+    border: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0 !important;
+}
+.btn-ios-phone:hover {
+    opacity: 0.9;
+    color: white !important;
+    box-shadow: none;
+}
+
+
+/* NOVO: ESTILO ESPECÍFICO PARA O BOTÃO EMAIL US (Azul iOS Mail) */
+.btn-ios-mail {
+    /* Degrade do ícone de Email do iOS (Azul Claro) */
+    background-image: linear-gradient(to right, #007AFF, #5AC8FA);
+    color: white !important; /* Texto branco para contraste */
+    border: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0 !important;
+}
+.btn-ios-mail:hover {
+    opacity: 0.9;
+    color: white !important;
+    box-shadow: none;
+}
