@@ -4,9 +4,9 @@
 
 :root {
     /* Paleta: Blue (Primary), White (Light), Black (Secondary/Dark) */
-    --bs-primary: #3707f7; /* Azul Marinho (Assinatura) */
+    --bs-primary: #00d0ffa5; /* Azul Marinho (Assinatura) */
     --bs-secondary: #000000; /* Preto Puro (Headers e Destaque) */
-    --bs-dark: #212529; /* Quase Preto (Texto Principal) */
+    --bs-dark: #060708; /* Quase Preto (Texto Principal) */
     --bs-light: #ffffff;/* Branco Puro (Fundo) */
     
     /* Cor para o Botão Google Reviews (Verde - Necessidade funcional) */
