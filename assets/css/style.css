@@ -55,14 +55,23 @@ p, .lead {
 
 /* Botão Principal: Azul Marinho (Preenchido) ou Preto (Contorno) */
 .btn-primary {
-    /* Mantém o Azul Marinho, mas com tipografia mais fina */
-    border-radius: 0 !important; /* Estilo Alo: Formas mais quadradas ou arredondamento mínimo */
+    /* Mantenha suas regras de estilo (padding, fontes, etc.) */
+    border-radius: 0 !important;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 0.75rem 2rem;
     border-width: 1px;
+    
+    /* NOVO: Degradê Sutil com a cor --bs-primary */
+    /* Cria um degradê vertical (de cima para baixo),
+       começando com a cor principal e terminando com uma versão um pouco mais escura */
+    background-image: linear-gradient(to bottom, #00d0ffa5, #00b3e5a5); 
+    background-color: transparent; /* Garante que o gradiente seja o principal */
+    border-color: #00b3e5a5; /* Borda da cor mais escura do gradiente para definição */
+    color: var(--bs-light) !important; /* Força o texto branco para alto contraste */
 }
+/* Botão Contorno: Azul Marinho */
 .btn-outline-primary {
     border-radius: 0 !important;
     font-weight: 500;
@@ -70,15 +79,21 @@ p, .lead {
     letter-spacing: 0.1em;
     padding: 0.75rem 2rem;
     border-width: 1px;
+    /* Mantém as cores originais no estado normal */
 }
 
-
-/* Hover simples e sem brilho */
-.btn-primary:hover, 
+/* NOVO: Hover para Botão Contorno (Preenche com o Degradê) */
 .btn-outline-primary:hover {
+    /* Usa as mesmas propriedades de gradiente do .btn-primary */
+    background-image: linear-gradient(to bottom, #00d0ffa5, #00b3e5a5);
+    background-color: transparent;
+    border-color: #00b3e5a5;
+    color: var(--bs-light) !important; /* Texto branco */
+    
+    /* Mantenha suas regras de box-shadow e transform */
     box-shadow: none;
     transform: none;
-    opacity: 0.85; /* Destaque por opacidade/cor */
+    opacity: 1; /* Remove o opacity: 0.85 para dar mais vida */
 }
 
 /* Botão de Contato na seção escura (Fundo azul) */
