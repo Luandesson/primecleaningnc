@@ -4,7 +4,7 @@
 
 :root {
     /* Paleta: Blue (Primary), White (Light), Black (Secondary/Dark) */
-    --bs-primary: #00d0ffa5; /* Azul Marinho (Assinatura) */
+    --bs-primary: #00d0ffa5; /* Azul Marinho (Assinatura - Mantenho o Alpha para a Navegação) */
     --bs-secondary: #000000; /* Preto Puro (Headers e Destaque) */
     --bs-dark: #060708; /* Quase Preto (Texto Principal) */
     --bs-light: #ffffff;/* Branco Puro (Fundo) */
@@ -23,55 +23,37 @@
 body {
     font-family: var(--bs-body-font-family);
     color: var(--bs-dark);
-    line-height: 1.6; /* Leitura mais arejada */
+    line-height: 1.6;
     background-color: var(--bs-light);
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--bs-secondary); 
-    font-weight: 500; /* Mais leve para elegância */
-    letter-spacing: -0.01em; /* Ajuste sutil para modernidade */
+    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 p, .lead {
-    font-weight: 300; /* Texto de corpo mais fino */
+    font-weight: 300;
 }
 
 /* ================================================================= */
 /* 2. PERSONALIZAÇÃO (Minimalismo e Foco na Forma) */
 /* ================================================================= */
 
-/* --- Estilo da Logo e Borda Arredondada (Limpo) --- */
+/* --- Estilo da Logo (Limpo) --- */
 .navbar-brand img {
     border-radius: 8px;
-    /* Remover a borda para um visual mais limpo */
 }
 .navbar-brand:hover img {
-    transform: scale(1.05); /* Efeito de hover sutil */
+    transform: scale(1.05);
 }
 
 
-/* --- Estilos de Botões (Alto Contraste) --- */
+/* --- ESTILOS DE BOTÕES DE AÇÃO PRINCIPAL (DEGRADÊ AZUL UNIFICADO) --- */
 
-/* Botão Principal: Azul Marinho (Preenchido) ou Preto (Contorno) */
-.btn-primary {
-    /* Mantenha suas regras de estilo (padding, fontes, etc.) */
-    border-radius: 0 !important;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.75rem 2rem;
-    border-width: 1px;
-    
-    /* NOVO: Degradê Sutil com a cor --bs-primary */
-    /* Cria um degradê vertical (de cima para baixo),
-       começando com a cor principal e terminando com uma versão um pouco mais escura */
-    background-image: linear-gradient(to bottom, #00d0ffa5, #00b3e5a5); 
-    background-color: transparent; /* Garante que o gradiente seja o principal */
-    border-color: #00b3e5a5; /* Borda da cor mais escura do gradiente para definição */
-    color: var(--bs-light) !important; /* Força o texto branco para alto contraste */
-}
-/* Botão Contorno: Azul Marinho */
+/* Estilo Base: Aplicações em Botões Principais (.btn-primary e .btn-outline-primary) */
+.btn-primary,
 .btn-outline-primary {
     border-radius: 0 !important;
     font-weight: 500;
@@ -79,242 +61,32 @@ p, .lead {
     letter-spacing: 0.1em;
     padding: 0.75rem 2rem;
     border-width: 1px;
-    /* Mantém as cores originais no estado normal */
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+    
+    /* Degradê Azul Claro (Padrão "Deep") */
+    background-image: linear-gradient(to bottom, #00d0ff, #00b3e5);
+    background-color: transparent;
+    border-color: #00b3e5;
+    color: var(--bs-light) !important;
 }
 
-/* NOVO: Hover para Botão Contorno (Preenche com o Degradê) */
+/* Hover para Todos os Botões Principais */
+.btn-primary:hover, 
 .btn-outline-primary:hover {
-    /* Usa as mesmas propriedades de gradiente do .btn-primary */
-    background-image: linear-gradient(to bottom, #00d0ffa5, #00b3e5a5);
+    background-image: linear-gradient(to top, #00d0ff, #00b3e5); /* Degradê Invertido */
     background-color: transparent;
-    border-color: #00b3e5a5;
-    color: var(--bs-light) !important; /* Texto branco */
-    
-    /* Mantenha suas regras de box-shadow e transform */
-    box-shadow: none;
-    transform: none;
-    opacity: 1; /* Remove o opacity: 0.85 para dar mais vida */
-}
-
-/* Botão de Contato na seção escura (Fundo azul) */
-.btn-outline-light {
-    border-radius: 0 !important; /* Estilo Quadrado */
-    font-weight: 400;
-    border-width: 1px;
-    letter-spacing: 0.08em;
-}
-
-/* Botão de Reviews: Verde */
-.btn-outline-success {
-    border-color: var(--bs-success);
-    color: var(--bs-success);
-    border-radius: 0 !important; /* Estilo Quadrado */
-    font-weight: 500;
-    border-width: 1px;
-}
-
-/* Cards de Serviço ou Preço - Mínimo de Distração */
-.card {
-    border-radius: 0.5rem !important; /* Arredondamento mínimo */
-    box-shadow: none; /* Sem sombra para um visual 'flutuante' */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Linha fina de separação */
-}
-
-/* ================================================================= */
-/* 3. ESTILOS DE NAVEGAÇÃO E HERÓI */
-/* ================================================================= */
-
-/* Navegação Fixa - Alto Contraste */
-#mainNav {
-    background-color: var(--bs-primary); 
-    border-bottom: 1px solid var(--bs-light); /* Linha fina */
-    box-shadow: none;
-}
-
-#mainNav .nav-link {
-    font-weight: 400; /* Mais leve */
-    font-size: 0.9rem;
-}
-
-/* Hover na navegação principal em Branco, mantendo o contraste na seção azul */
-#mainNav .nav-link:hover {
-    color: var(--bs-light) !important; 
-    text-decoration: underline; /* Destaque limpo */
-}
-
-/* Seção HERO (Home) */
-#home {
-    /* CORREÇÃO FINAL CONFIRMADA: O '../' sobe da pasta 'css' para a raiz,
-       e depois desce para a pasta 'img'. */
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/residential-commercial-cleaning-nc.jpg') no-repeat center center;
-    
-    background-size: cover;
-    background-attachment: fixed; 
-    display: flex; /* Garante que o conteúdo centralize */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    text-align: center;
-    min-height: 100vh; /* Garante que o hero ocupe a altura total da tela */
-}
-
-#home h1 {
-    font-size: clamp(3rem, 7vw, 5rem); 
-    font-weight: 400; 
-    color: var(--bs-light) !important; /* FORÇA o texto a ser BRANCO */
-    margin-bottom: 1rem; /* Adicionado para espaçar do parágrafo */
-}
-
-#home p.lead {
-    color: var(--bs-light) !important; /* Também garantir que o lead seja BRANCO */
-    font-weight: 300;
-    max-width: 800px; /* Limita a largura para melhor leitura */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#home .btn {
-    margin-top: 2rem; /* Espaçamento acima do botão */
-}
-
-
-/* ================================================================= */
-/* 4. UTILITY CLASSES E FOOTER */
-/* ================================================================= */
-
-.text-primary {
-    color: var(--bs-primary) !important;
-}
-
-.bg-primary {
-    background-color: var(--bs-primary) !important;
-}
-
-/* Footer - Minimalista, texto fino */
-footer {
-    background-color: var(--bs-secondary); /* Fundo Preto Puro */
-    color: rgba(255, 255, 255, 0.8);
-}
-footer h5 {
-    color: var(--bs-light);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-size: 1rem;
-}
-footer a {
-    font-weight: 300;
-}
-footer a:hover {
+    border-color: #00b3e5;
     color: var(--bs-light) !important;
-    text-decoration: none !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 1;
 }
 
-/* Aba de Serviços - Linhas finas */
-.nav-tabs {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.nav-tabs .nav-link {
-    font-weight: 400;
-    border-radius: 0;
-}
-.nav-tabs .nav-link.active {
-    color: var(--bs-primary); /* Aba ativa com a cor principal */
-    background-color: transparent;
-    border-color: transparent;
-    border-bottom: 2px solid var(--bs-primary); /* Linha de destaque */
-    font-weight: 500;
-}
-.nav-tabs .nav-link:hover:not(.active) {
-    border-color: transparent;
-}
-/* No seu style.css */
+/* --- ESTILOS DE BOTÕES DE CONTATO (Degradê de App) --- */
 
-/* 2. Para o link "Rate Us on Google" no rodapé */
-.footer-link {
-    /* Cor que se destaque no fundo escuro do rodapé */
-    color: #ebe7d9; /* Amarelo/Dourado, para o efeito "brilho dourado" que você gosta */
-    font-weight: 600;
-}
-/* Destaque para o Título do Formulário de Orçamento */
-/* Seção Contato/Orçamento */
-#contact {
-    /* Garante que qualquer texto ou elemento inline-block dentro desta seção
-       seja centralizado horizontalmente */
-    text-align: center;
-}
-
-/* Destaque para o Título do Formulário de Orçamento (Mantido) */
-#contact h2 {
-    color: var(--bs-light) !important;
-    font-weight: 700;
-    font-size: 2.2rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-    
-    /* Propriedades para a borda */
-    border: 2px solid var(--bs-light);
-    padding: 0.75rem 1.5rem;
-    display: inline-block; /* Mantém a borda justa ao texto */
-    border-radius: 8px;
-    margin-bottom: 3rem !important;
-}
-
-/* Botões de Contato em Fundo Claro - Estilo Básico */
-.btn-contact-light {
-    color: var(--bs-dark) !important;
-    border-color: var(--bs-dark) !important;
-    background-color: transparent !important;
-    font-weight: 500;
-}
-.btn-contact-light:hover {
-    color: var(--bs-light) !important;
-    background-color: var(--bs-dark) !important;
-    border-color: var(--bs-dark) !important;
-}
-
-/* Corrigindo a cor do ícone do Instagram em qualquer botão que a utilize */
-.btn-contact-light .fa-instagram {
-    /* Cor oficial do Instagram (Magenta/Roxo) */
-    color: #c13584; 
-}
-/* Botões de Contato em Fundo Claro - Estilo Básico */
-.btn-contact-light {
-    color: var(--bs-dark); /* Cor do texto padrão */
-    border-color: var(--bs-dark); /* Cor da borda padrão */
-    background-color: transparent;
-    font-weight: 500;
-    /* Ajuste de padding para ser consistente com outros botões se necessário */
-    padding: 0.75rem 1.5rem; 
-    border-radius: 0 !important; /* Mantém seu estilo quadrado */
-    border-width: 1px; /* Mantém a largura da borda */
-}
-.btn-contact-light:hover {
-    color: var(--bs-light) !important; /* Texto branco no hover */
-    background-color: var(--bs-dark) !important; /* Fundo escuro no hover */
-    border-color: var(--bs-dark) !important; /* Borda escura no hover */
-    box-shadow: none; /* Remover sombra se houver */
-}
-
-/* ESTILO ESPECÍFICO PARA O BOTÃO DO INSTAGRAM */
+/* INSTAGRAM (Degradê Roxo/Laranja/Amarelo) */
 .btn-instagram {
-    /* Cores do gradiente do Instagram */
-    background-image: linear-gradient(to right top, #f9ce34, #ee2a7b, #6228d7); /* Fundo do botão */
-    color: white !important; /* Cor do texto e ícone sobre o gradiente */
-    border: none; /* Sem borda para o gradiente ficar limpo */
-    font-weight: 500;
-    /* Adicione padding e border-radius se necessário, para corresponder aos outros botões */
-    padding: 0.75rem 1.5rem; 
-    border-radius: 0 !important;
-}
-
-/* Efeito de HOVER para o botão do Instagram (opcional, pode ser um leve escurecimento) */
-.btn-instagram:hover {
-    opacity: 0.9;
-    color: white !important; /* Garante que o texto continue branco no hover */
-    box-shadow: none; /* Remover sombra se houver */
-}
-/* ESTILO ESPECÍFICO PARA O BOTÃO DO INSTAGRAM (Mantido) */
-.btn-instagram {
-    /* Cores do gradiente do Instagram */
     background-image: linear-gradient(to right top, #f9ce34, #ee2a7b, #6228d7);
     color: white !important;
     border: none; 
@@ -322,12 +94,16 @@ footer a:hover {
     padding: 0.75rem 1.5rem; 
     border-radius: 0 !important;
 }
+.btn-instagram:hover {
+    opacity: 0.9;
+    color: white !important;
+    box-shadow: none;
+}
 
-/* NOVO: ESTILO ESPECÍFICO PARA O BOTÃO CALL/TEXT (Verde iOS Phone) */
+/* CALL/TEXT (Degradê Verde iOS Phone) */
 .btn-ios-phone {
-    /* Degrade do ícone de Telefone do iOS (Verde Ciano) */
     background-image: linear-gradient(to right, #34C759, #2ECC71);
-    color: white !important; /* Texto branco para contraste */
+    color: white !important;
     border: none;
     font-weight: 500;
     padding: 0.75rem 1.5rem; 
@@ -339,12 +115,10 @@ footer a:hover {
     box-shadow: none;
 }
 
-
-/* NOVO: ESTILO ESPECÍFICO PARA O BOTÃO EMAIL US (Azul iOS Mail) */
+/* EMAIL US (Degradê Azul iOS Mail) */
 .btn-ios-mail {
-    /* Degrade do ícone de Email do iOS (Azul Claro) */
     background-image: linear-gradient(to right, #007AFF, #5AC8FA);
-    color: white !important; /* Texto branco para contraste */
+    color: white !important;
     border: none;
     font-weight: 500;
     padding: 0.75rem 1.5rem; 
@@ -354,4 +128,172 @@ footer a:hover {
     opacity: 0.9;
     color: white !important;
     box-shadow: none;
+}
+
+/* NOVO: GOOGLE REVIEWS (Degradê Verde Google Maps) */
+.btn-google-map {
+    background-image: linear-gradient(to right, #34a853, var(--bs-success)); 
+    color: white !important;
+    border: none; 
+    font-weight: 600;
+    padding: 0.75rem 2rem; 
+    border-radius: 0 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+.btn-google-map:hover {
+    background-image: linear-gradient(to left, #34a853, var(--bs-success)); 
+    opacity: 0.9;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Botões Auxiliares */
+.btn-outline-light {
+    border-radius: 0 !important;
+    font-weight: 400;
+    border-width: 1px;
+    letter-spacing: 0.08em;
+}
+
+/* ================================================================= */
+/* 3. ESTILOS DE NAVEGAÇÃO, HERÓI E DESTAQUES */
+/* ================================================================= */
+
+/* Navegação Fixa - Alto Contraste */
+#mainNav {
+    background-color: var(--bs-primary); /* Usa o Alpha para a navegação */
+    border-bottom: 1px solid var(--bs-light);
+    box-shadow: none;
+}
+#mainNav .nav-link {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+#mainNav .nav-link:hover {
+    color: var(--bs-light) !important; 
+    text-decoration: underline;
+}
+
+/* Seção HERO (Home) */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/residential-commercial-cleaning-nc.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+#home h1 {
+    font-size: clamp(3rem, 7vw, 5rem); 
+    font-weight: 400; 
+    color: var(--bs-light) !important;
+    margin-bottom: 1rem;
+}
+#home p.lead {
+    color: var(--bs-light) !important;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#home .btn {
+    margin-top: 2rem;
+}
+
+/* Destaque para o Título do Formulário de Orçamento (CTA Botão Preenchido) */
+#contact h2 {
+    color: var(--bs-light) !important;
+    font-weight: 700;
+    font-size: 2.2rem;
+    
+    background-image: linear-gradient(to right, #00d0ff, #00b3e5);
+    border: none;
+    padding: 1.5rem 2rem;
+    display: block;
+    border-radius: 0;
+    margin-bottom: 3rem !important;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+#contact {
+    text-align: center;
+}
+
+
+/* Cards de Serviço ou Preço - Mínimo de Distração */
+.card {
+    border-radius: 0.5rem !important;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ================================================================= */
+/* 4. UTILITY CLASSES, FOOTER E EFEITOS DE TEXTO */
+/* ================================================================= */
+
+/* NOVO: EFEITO DEGRADÊ NO TEXTO (AZUL DA MARCA) */
+.gradient-text {
+    background: linear-gradient(to right, #00d0ff, #00b3e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #00d0ff; /* Fallback */
+    background-clip: text;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+/* Aba de Serviços - Linhas finas */
+.nav-tabs {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.nav-tabs .nav-link {
+    font-weight: 400;
+    border-radius: 0;
+}
+.nav-tabs .nav-link.active {
+    color: var(--bs-primary);
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid var(--bs-primary);
+    font-weight: 500;
+}
+.nav-tabs .nav-link:hover:not(.active) {
+    border-color: transparent;
+}
+
+/* Footer - Minimalista */
+footer {
+    background-color: var(--bs-secondary);
+    color: rgba(255, 255, 255, 0.8);
+}
+footer h5 {
+    color: var(--bs-light);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+footer a {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8); /* Garante que o link base tenha a cor do texto do footer */
+}
+footer a:hover {
+    color: var(--bs-light) !important;
+    text-decoration: none !important;
+}
+
+/* Para o link "Rate Us on Google" no rodapé (Destaque Dourado) */
+.footer-link {
+    color: #ebe7d9;
+    font-weight: 600;
 }
