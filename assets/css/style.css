@@ -297,3 +297,34 @@ footer a:hover {
     color: #ebe7d9;
     font-weight: 600;
 }
+/* ... seu código CSS existente ... */
+
+/* ---------------------------------------------------------------------- */
+/* EFEITO DEGRADÊ E ESTILIZAÇÃO PARA TÍTULOS DE CARDS */
+/* ---------------------------------------------------------------------- */
+
+/* Estilo para Títulos de Cards (Mais Grosso e Maior) */
+.custom-card-title {
+    /* Deixa o texto bem grosso (negrito extremo) */
+    font-weight: 900 !important; 
+    /* Garante um tamanho de fonte fixo e chamativo */
+    font-size: 1.6rem; 
+}
+
+/* EFEITO DEGRADÊ GOLDEN (Brilho Dourado/Amarelo) */
+.gradient-text-light {
+    /* Define o degradê */
+    background: linear-gradient(90deg, #000000 0%, #262626 100%); 
+    
+    /* Recorta o fundo para que o degradê apareça apenas no formato do texto */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Torna a cor do texto transparente para que o degradê seja visível */
+    color: transparent !important; 
+    
+    /* Necessário para que o efeito funcione corretamente */
+    display: inline-block; 
+}
+
+/* ... o restante do seu código CSS ... */
